@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Strand — Osei Mensah</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23C4622D'/></svg>" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=recoleta@400&display=swap" />
+<style>
+  :root {
+    --chalk: #F5F0E8;
+    --chalk-card: #EDE8DF;
+    --ink: #2A2520;
+    --ink-muted: #6B6258;
+    --ink-soft: #8A8077;
+    --accent: #C4622D;
+    --accent-soft: #D88A5F;
+    --border: #DCD4C6;
+    --r-input: 4px;
+    --r-comp: 8px;
+    --r-max: 16px;
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s8: 32px; --s10: 40px; --s12: 48px;
+    --shadow-card: 0 1px 2px rgba(42,37,32,.04), inset 0 1px 0 rgba(255,255,255,.6);
+    --shadow-hover: 0 4px 12px rgba(42,37,32,.08), inset 0 1px 0 rgba(255,255,255,.7);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Satoshi',system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.5;color:var(--ink);
+    background-color:var(--chalk);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.04'/></svg>");
+    background-size:200px 200px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .page{
+    min-height:100vh;max-width:480px;margin:0 auto;
+    padding:var(--s12) var(--s5) var(--s10);
+    display:flex;flex-direction:column;align-items:stretch;
+  }
+  .profile{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:var(--s8)}
+  .avatar{
+    width:80px;height:80px;border-radius:50%;
+    background-image:linear-gradient(135deg,var(--accent),var(--accent-soft));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--chalk);font-family:'Recoleta',Georgia,serif;font-size:32px;
+    margin-bottom:var(--s4);border:2px solid rgba(255,255,255,.6);
+    box-shadow:0 2px 8px rgba(196,98,45,.15);
+  }
+  .name{font-family:'Recoleta',Georgia,serif;font-size:24px;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:var(--s2)}
+  .bio{font-size:14px;color:var(--ink-muted);line-height:1.4;max-width:320px}
+  .links{display:flex;flex-direction:column;gap:var(--s3)}
+  .link{
+    position:relative;display:flex;align-items:center;height:56px;
+    padding:0 var(--s4);background-color:var(--chalk-card);
+    border:1px solid var(--border);border-left:3px solid transparent;
+    border-radius:var(--r-comp);text-decoration:none;color:var(--ink);
+    box-shadow:var(--shadow-card);
+    transition:transform 120ms ease,box-shadow 120ms ease,border-color 120ms ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .link:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);border-left-color:var(--accent)}
+  .link:active{transform:scale(.97)}
+  .link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .link__icon{width:20px;height:20px;flex-shrink:0;color:var(--ink-muted);margin-right:var(--s3)}
+  .link__label{font-size:15px;font-weight:500;flex:1;line-height:1}
+  .link__arrow{width:16px;height:16px;color:var(--ink-soft);flex-shrink:0;transition:transform 120ms ease,color 120ms ease}
+  .link:hover .link__arrow{color:var(--accent);transform:translateX(2px)}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="profile">
+    <div class="avatar" aria-hidden="true">O</div>
+    <h1 class="name">Osei Mensah</h1>
+    <p class="bio">Frontend developer. Building things worth using.</p>
+  </header>
+  <nav class="links" id="links" aria-label="Personal links"></nav>
+</main>
+
+<script>
+  const links = [
+    {
+      label: "GitHub",
+      url: "https://github.com/KingImperio",
+      icon: '<path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18.91-.25 1.89-.38 2.86-.39.97.01 1.95.14 2.86.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.73.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.35.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.14 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z" fill="currentColor"/>'
+    },
+    {
+      label: "Portfolio",
+      url: "https://kingimperio.github.io",
+      icon: '<path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h12v2H3v-2zm0 4h18v2H3v-2zm0 4h8v2H3v-2z" fill="currentColor"/>'
+    },
+    {
+      label: "LinkedIn",
+      url: "https://linkedin.com/in/oseimensah",
+      icon: '<path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.06 0-1.14.93-2.06 2.06-2.06 1.14 0 2.06.93 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zM7.12 20.45H3.56V9h3.56v11.45z" fill="currentColor"/>'
+    },
+    {
+      label: "Dribbble",
+      url: "https://dribbble.com/oseimensah",
+      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.6 5.8c1.1 1.4 1.78 3.1 1.85 4.95-1.5-.31-2.96-.46-4.36-.46-.43 0-.85.02-1.27.05-.16-.4-.32-.79-.5-1.17 2.16-.91 3.67-2.07 4.28-3.37zM12 3.8c2.13 0 4.08.79 5.56 2.09-.5 1.1-1.89 2.13-3.91 2.96-1.16-2.18-2.45-3.96-3.31-4.96.54-.06 1.09-.09 1.66-.09zM8.46 4.5c.83.95 2.14 2.75 3.32 4.96-2.45.65-4.85.86-6.49.91.51-2.59 2.16-4.71 4.39-5.87zM3.8 12v-.21c.21 0 .56.01 1.01.01 1.92 0 4.65-.21 7.47-.96.27.5.52 1.02.75 1.55-3.05.86-5.84 2.79-7.62 5.7C4.32 16.65 3.8 14.66 3.8 12zm3.92 7.41c1.59-2.85 4.21-4.7 7.08-5.49.83 2.27 1.39 4.49 1.68 6.05-1.2.56-2.55.88-3.97.88-1.74 0-3.37-.5-4.79-1.44zm9.84-.21c-.29-1.5-.81-3.61-1.6-5.79.32-.03.65-.05.99-.05 1.26 0 2.59.14 3.97.43-.21 2.23-1.47 4.21-3.36 5.41z" fill="currentColor"/>'
+    },
+    {
+      label: "Email",
+      url: "mailto:[email protected]",
+      icon: '<path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.06L3.42 7H20.58L12 12.06zM4 8.41V18h16V8.41l-7.42 5.4a1 1 0 0 1-1.16 0L4 8.41z" fill="currentColor"/>'
+    }
+  ];
+
+  const ICON_OPEN = '<path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+
+  const linksEl = document.getElementById('links');
+
+  function render() {
+    const html = links.map(link => {
+      const isExternal = !link.url.startsWith('mailto:');
+      return `<a class="link" href="${link.url}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+        <svg class="link__icon" viewBox="0 0 24 24" aria-hidden="true">${link.icon}</svg>
+        <span class="link__label">${link.label}</span>
+        <svg class="link__arrow" viewBox="0 0 24 24" aria-hidden="true">${ICON_OPEN}</svg>
+      </a>`;
+    }).join('');
+    linksEl.innerHTML = html;
+  }
+
+  render();
+</script>
+</body>
+</html>
