@@ -14,7 +14,7 @@ Strand is a single-page link hub. It loads a profile avatar, a short bio, and a 
 Download or clone the repo. Open index.html in a browser. No build step required.
 
 ## Live demo
-https://
+https://kingimperio.github.io/strand/
 
 ## Part of
 Built as part of a frontend portfolio series. Component styling draws from [black.ui](https://github.com/KingImperio/black.ui).
